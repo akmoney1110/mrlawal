@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEEMAIB ROYAL MEDICAL CONSULT | Healthcare Training & Consulting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            primary: '#1e40af',
+                            accent: '#0ea5e9',
+                            light: '#f8fafc'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for smooth hover effects and layout */
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .glass-nav {
+            background-image: url('lawallogo.jpg');
+
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #38bdf8;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased">
+
+    <!-- HERO SECTION WITH NAVIGATION OVERLAY -->
+    <header class="relative h-screen min-h-[600px] hero-bg flex flex-col">
+        <!-- Dark Overlay -->
+        <div class="absolute inset-0 bg-brand-dark/70"></div>
+
+        <!-- Navigation Bar (Overlay on Image) -->
+        <nav class="relative z-50 w-full glass-nav transition-all duration-300" id="navbar">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                            T
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-white font-serif text-xl font-bold tracking-wide leading-none">TEEMAIB</span>
+                            <span class="text-blue-300 text-xs font-medium tracking-widest uppercase">Royal Medical Consult</span>
+                        </div>
+                    </div>
+
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-8">
+                            <a href="#home" class="nav-link text-white hover:text-blue-300 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                            <a href="#about" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                            <a href="#services" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</a>
+                            <a href="#training" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Training</a>
+                            <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-lg hover:shadow-blue-500/30">Contact Us</a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="-mr-2 flex md:hidden">
+                        <button type="button" onclick="toggleMobileMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                            <i class="fas fa-bars text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden bg-brand-dark/95 backdrop-blur-md" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-700">
+                    <a href="#home" class="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-600">Home</a>
+                    <a href="#about" class="text-gray-300 block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-600 hover:text-white">About</a>
+                    <a href="#services" class="text-gray-300 block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-600 hover:text-white">Services</a>
+                    <a href="#training" class="text-gray-300 block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-600 hover:text-white">Training</a>
+                    <a href="#contact" class="text-blue-300 block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-600 hover:text-white">Contact Us</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 flex-grow flex items-center justify-center text-center px-4" id="home">
+            <div class="max-w-4xl mx-auto animate-fade-in-up">
+                <div class="inline-block mb-4 px-4 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-sm font-semibold tracking-wide uppercase backdrop-blur-sm">
+                    Excellence in Healthcare
+                </div>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 leading-tight shadow-sm">
+                    Shaping the Future of <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">Medical Excellence</span>
+                </h1>
+                <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-300 mb-10 font-light">
+                    Developing competent healthcare professionals through structured academic and practical training in the heart of Lagos.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#services" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold text-lg transition-all shadow-lg hover:shadow-blue-500/40 transform hover:-translate-y-1">
+                        Our Services
+                    </a>
+                    <a href="#training" class="px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-dark rounded-lg font-semibold text-lg transition-all transform hover:-translate-y-1">
+                        View Programs
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-white/50">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">About Us</h2>
+                <p class="mt-2 text-3xl leading-8 font-serif font-bold tracking-tight text-gray-900 sm:text-4xl">
+                    Committed to Healthcare Development
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl group">
+                    <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Medical Training" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <p class="font-bold text-xl">Hospital-Based Training</p>
+                        <p class="text-sm opacity-90">Lagos, Nigeria</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-gray-800">Excellence in Healthcare Training & Consulting</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg">
+                        TEEMAIB ROYAL MEDICAL CONSULT operates a state-of-the-art, hospital-based training facility in Lagos. We are dedicated to bridging the gap between theoretical knowledge and practical application in the medical field.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed text-lg">
+                        Our mission is to develop competent, confident, and compassionate healthcare professionals who are ready to meet the demands of modern medicine. Through structured academic programs and hands-on practical training, we ensure our graduates are industry-ready.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-6 pt-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-12 w-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600">
+                                <i class="fas fa-user-md text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Expert Instructors</h4>
+                                <p class="text-sm text-gray-500">Led by seasoned medical professionals.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-12 w-12 rounded-lg bg-teal-100 flex items-center justify-center text-teal-600">
+                                <i class="fas fa-hospital text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Real-World Environment</h4>
+                                <p class="text-sm text-gray-500">Training directly within a hospital setting.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">What We Offer</h2>
+                <p class="mt-2 text-3xl leading-8 font-serif font-bold tracking-tight text-gray-900 sm:text-4xl">
+                    Comprehensive Medical Services
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    From professional training to expert consulting, we provide a wide range of healthcare solutions.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                    <div class="h-48 bg-blue-600 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500" alt="Training">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-5xl text-white drop-shadow-lg"></i>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Healthcare Training</h3>
+                        <p class="text-gray-600 mb-4">
+                            Structured academic and practical training for nurses, technicians, and aspiring medical professionals in a real hospital environment.
+                        </p>
+                        <a href="#training" class="text-blue-600 font-semibold hover:text-blue-800 inline-flex items-center">
+                            Learn more <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                    <div class="h-48 bg-teal-600 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500" alt="Consulting">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-stethoscope text-5xl text-white drop-shadow-lg"></i>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Medical Consulting</h3>
+                        <p class="text-gray-600 mb-4">
+                            Expert advisory services for healthcare institutions, policy development, and operational efficiency improvements.
+                        </p>
+                        <a href="#contact" class="text-teal-600 font-semibold hover:text-teal-800 inline-flex items-center">
+                            Get in touch <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                    <div class="h-48 bg-indigo-600 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500" alt="Certification">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-certificate text-5xl text-white drop-shadow-lg"></i>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Certification Programs</h3>
+                        <p class="text-gray-600 mb-4">
+                            Industry-recognized certifications and continuous professional development courses to keep your skills current.
+                        </p>
+                        <a href="#contact" class="text-indigo-600 font-semibold hover:text-indigo-800 inline-flex items-center">
+                            Enroll now <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ <section id="trainings" class="py-16 md:py-24 bg-gray-100">
+    <div class="container mx-auto px-5 md:px-12">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-green-700 font-semibold bg-green-100 px-4 py-1 rounded-full text-sm">Academic & Practical Training</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-4">Structured <span class="text-yellow-600">Clinical Development</span></h2>
+        <p class="text-gray-600 mt-3">Real-world hospital-based learning environment designed to shape confident, skilled healthcare professionals.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl p-6 shadow-md service-card">
+          <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+            <i class="fas fa-laptop-medical text-yellow-700 text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800">Structured Academic Curriculum</h3>
+          <p class="text-gray-500 mt-2">Evidence-based modules integrated with hospital workflow, from fundamentals to advanced clinical reasoning.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-md service-card">
+          <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+            <i class="fas fa-hand-holding-heart text-yellow-700 text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800">Practical Bedside Training</h3>
+          <p class="text-gray-500 mt-2">Hands-on experience in patient assessment, procedures, and interdisciplinary collaboration within our partner hospitals.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-md service-card">
+          <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+            <i class="fas fa-chalkboard-user text-yellow-700 text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800">Consulting & CPD</h3>
+          <p class="text-gray-500 mt-2">Custom consulting for healthcare institutions, plus continuous professional development workshops for staff.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consulting / Services Excellence -->
+  <section id="service" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-5 md:px-12">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
+          <span class="text-blue-700 font-semibold bg-blue-100 px-3 py-1 rounded-full text-sm">Healthcare Consulting</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-4">Empowering Institutions & Professionals</h2>
+          <p class="text-gray-600 text-lg mt-4">We deliver strategic consulting services to hospitals, nursing schools, and health ministries — from process improvement to clinical governance and training systems.</p>
+          <ul class="mt-6 space-y-3">
+            <li class="flex items-center space-x-3"><i class="fas fa-check-circle text-yellow-600 text-xl"></i><span class="text-gray-700">Accreditation readiness & quality assurance</span></li>
+            <li class="flex items-center space-x-3"><i class="fas fa-check-circle text-yellow-600 text-xl"></i><span class="text-gray-700">Custom curriculum development</span></li>
+            <li class="flex items-center space-x-3"><i class="fas fa-check-circle text-yellow-600 text-xl"></i><span class="text-gray-700">Simulation-based medical education</span></li>
+            <li class="flex items-center space-x-3"><i class="fas fa-check-circle text-yellow-600 text-xl"></i><span class="text-gray-700">Workforce planning and mentorship programs</span></li>
+          </ul>
+          <a href="#contact" class="inline-block mt-8 bg-gray-800 hover:bg-yellow-600 text-white font-semibold px-6 py-3 rounded-full transition shadow-md btn-hover">Request Consulting <i class="fas fa-arrow-right ml-1"></i></a>
+        </div>
+        <div class="order-1 md:order-2">
+          <img class="rounded-2xl shadow-xl w-full h-auto object-cover" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Medical consultation team meeting">
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- TRAINING SECTION -->
+    <section id="training" class="py-20 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-blue-50 rounded-full opacity-50 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-teal-50 rounded-full opacity-50 blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
+                <div class="lg:col-span-5 mb-10 lg:mb-0">
+                    <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">Training Programs</h2>
+                    <p class="mt-2 text-3xl font-serif font-bold text-gray-900 sm:text-4xl">
+                        Practical Skills for Real Impact
+                    </p>
+                    <p class="mt-4 text-lg text-gray-500">
+                        Our curriculum is designed to provide hands-on experience. Trainees work alongside experienced professionals in a live hospital setting.
+                    </p>
+
+                    <div class="mt-8 space-y-4">
+                        <div class="flex items-center p-4 bg-white border border-gray-100 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-900">Clinical Skills Development</h4>
+                                <p class="text-sm text-gray-500">Patient care, diagnostics, and procedures.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-white border border-gray-100 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-900">Emergency Response</h4>
+                                <p class="text-sm text-gray-500">First aid, CPR, and trauma management.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-white border border-gray-100 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-900">Healthcare Administration</h4>
+                                <p class="text-sm text-gray-500">Hospital management and operational logistics.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="rounded-2xl shadow-lg transform translate-y-8" alt="Medical Student">
+                        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="rounded-2xl shadow-lg" alt="Doctor Training">
+                    </div>
+                    <!-- Stats Badge -->
+                    <div class="absolute bottom-10 left-10 bg-white p-6 rounded-xl shadow-xl border-l-4 border-blue-500 max-w-xs">
+                        <p class="text-3xl font-bold text-gray-900">500+</p>
+                        <p class="text-gray-600 font-medium">Healthcare Professionals Trained</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+     <section id="contact" class="py-16 md:py-24 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+    <div class="container mx-auto px-5 md:px-12">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold">Get in Touch</h2>
+        <div class="w-24 h-1 bg-yellow-400 mx-auto mt-3 mb-4 rounded-full"></div>
+        <p class="text-gray-300 text-lg">Reach out for enrollment, partnership, or consulting inquiries. We’re here to support your healthcare career & organizational growth.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-10">
+        <!-- Contact info & location -->
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20">
+          <h3 class="text-2xl font-semibold mb-4 flex items-center"><i class="fas fa-hospital-user text-yellow-400 mr-3"></i> Visit / Connect</h3>
+          <div class="space-y-5">
+            <div class="flex items-start space-x-4">
+              <i class="fas fa-map-pin text-yellow-400 text-xl mt-1"></i>
+              <div>
+                <p class="font-medium">Head Office / Training Facility:</p>
+                <p class="text-gray-200">001, F Close 3rd Avenue, beside Havana Hotel, Gowon Estate, Egbeda, Lagos, Nigeria.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <i class="fas fa-phone-alt text-yellow-400 text-xl mt-1"></i>
+              <div>
+                <p class="font-medium">Phone Numbers (Call / WhatsApp):</p>
+                <p class="text-gray-200">0909 991 9989 &nbsp;|&nbsp; 0803 444 0868</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <i class="fas fa-envelope text-yellow-400 text-xl mt-1"></i>
+              <div>
+                <p class="font-medium">Email Address:</p>
+                <p class="text-gray-200 break-all">info@trmc.ng</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <i class="fas fa-clock text-yellow-400 text-xl mt-1"></i>
+              <div>
+                <p class="font-medium">Office Hours:</p>
+                <p class="text-gray-200">Monday – Friday: 8:00 AM – 6:00 PM | Saturday: 9:00 AM – 2:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-8 flex space-x-4">
+            <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold px-5 py-2 rounded-full transition inline-flex items-center"><i class="fab fa-whatsapp mr-2"></i> WhatsApp</a>
+            <a href="mailto:info@trmc.ng" class="border border-white text-white hover:bg-white hover:text-gray-900 px-5 py-2 rounded-full transition">Send Email</a>
+          </div>
+        </div>
+
+        <!-- Contact Form (simple but elegant) -->
+        <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20">
+          <h3 class="text-2xl font-semibold mb-4">Send a Message</h3>
+          <form action="#" method="POST">
+            <div class="grid grid-cols-1 gap-4">
+              <input type="text" placeholder="Full name" class="w-full px-4 py-3 rounded-xl bg-gray-800/60 text-white border border-gray-600 focus:outline-none focus:border-yellow-400 transition placeholder:text-gray-400">
+              <input type="email" placeholder="Email address" class="w-full px-4 py-3 rounded-xl bg-gray-800/60 text-white border border-gray-600 focus:outline-none focus:border-yellow-400 transition placeholder:text-gray-400">
+              <input type="tel" placeholder="Phone number (optional)" class="w-full px-4 py-3 rounded-xl bg-gray-800/60 text-white border border-gray-600 focus:outline-none focus:border-yellow-400">
+              <textarea rows="4" placeholder="Tell us about your interest: training, consulting, or general inquiry..." class="w-full px-4 py-3 rounded-xl bg-gray-800/60 text-white border border-gray-600 focus:outline-none focus:border-yellow-400"></textarea>
+              <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 rounded-xl transition shadow-md btn-hover">Submit Inquiry <i class="fas fa-paper-plane ml-2"></i></button>
+            </div>
+            <p class="text-xs text-gray-300 mt-3 text-center">We’ll get back to you within 24 hours.</p>
+          </form>
+        </div>
+      </div>
+
+      <!-- Google Map integrated at bottom of contact but simplified (static embed style) -->
+      <div class="mt-12 rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+        <iframe title="TEEMAIB ROYAL MEDICAL CONSULT Location Map" class="w-full h-64 md:h-80" frameborder="0" style="border:0" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Gowon+Estate+Egbeda+Lagos+Nigeria&center=6.5955,3.2968&zoom=15" allowfullscreen></iframe>
+        <!-- Note: API key is demo purpose; shows approximate location of Egbeda. Ideal for representation -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-10 border-t border-gray-800">
+    <div class="container mx-auto px-5 md:px-12">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="col-span-1 md:col-span-1">
+          <div class="flex items-center space-x-2 mb-3">
+            <i class="fas fa-heartbeat text-yellow-400 text-2xl"></i>
+            <span class="font-bold text-white text-xl">TEEMAIB<span class="text-yellow-400"> ROYAL</span></span>
+          </div>
+          <p class="text-sm text-gray-400">Advancing healthcare through excellence in training and consulting. Hospital-based facility in Lagos.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#home" class="hover:text-yellow-400 transition">Home</a></li>
+            <li><a href="#about" class="hover:text-yellow-400 transition">About Us</a></li>
+            <li><a href="#training" class="hover:text-yellow-400 transition">Training Programs</a></li>
+            <li><a href="#services" class="hover:text-yellow-400 transition">Consulting</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3">Contact Info</h4>
+          <ul class="space-y-2 text-sm">
+            <li><i class="fas fa-phone-alt mr-2 text-yellow-500 text-xs"></i> 0909 991 9989</li>
+            <li><i class="fas fa-phone-alt mr-2 text-yellow-500 text-xs"></i> 0803 444 0868</li>
+            <li><i class="fas fa-envelope mr-2 text-yellow-500 text-xs"></i> info@trmc.ng</li>
+            <li><i class="fas fa-location-dot mr-2 text-yellow-500 text-xs"></i> Gowon Estate, Egbeda, Lagos</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3">Follow Us</h4>
+          <div class="flex space-x-4 text-xl">
+            <a href="#" class="hover:text-yellow-400 transition"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="hover:text-yellow-400 transition"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="hover:text-yellow-400 transition"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="hover:text-yellow-400 transition"><i class="fab fa-twitter"></i></a>
+          </div>
+          <p class="text-xs text-gray-500 mt-4">© 2025 TEEMAIB ROYAL MEDICAL CONSULT — All rights reserved.</p>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-6 text-center text-xs text-gray-500">
+        <p>📍 Hospital-based training facility: 001, F close 3rd avenue, beside Havana hotel, Gowon Estate, Egbeda, Lagos. | Committed to developing competent healthcare professionals.</p>
+      </div>
+    </div>
+  </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+                nav.classList.replace('bg-brand-dark/60', 'bg-brand-dark/90');
+            } else {
+                nav.classList.remove('shadow-lg');
+                nav.classList.replace('bg-brand-dark/90', 'bg-brand-dark/60');
+            }
+        });
+    </script>
+</body>
+</html>
