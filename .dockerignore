@@ -1,0 +1,14 @@
+venv
+.venv
+__pycache__
+*.pyc
+*.pyo
+.git
+.gitignore
+.DS_Store
+db.sqlite3
+*.sqlite3
+.env
+.env.*
+staticfiles
+*.log
